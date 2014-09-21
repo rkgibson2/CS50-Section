@@ -4,10 +4,8 @@
 
 int main(int argc, string argv[])
 {
-    string name = "Robbie";
+    string name = "Hello, World!";
 
-    for (int i = 0, n = strlen(name); i < n; i++)
-    {
-	printf("%c\n", name[i]);
-    }
+    // TODO
+    // loop through the string
 }
