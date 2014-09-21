@@ -2,12 +2,23 @@
 #include <cs50.h>
 #include <string.h>
 
-int main(int argc, string argv[])
+void print_string(string input);
+
+int main(void)
 {
     string name = "Hello, World!";
 
-    // TODO
-    // loop through the string
-
+    print_string(name);
+    
     return 0;
+}
+
+void print_string(string input)
+{
+    for (int i = 0; i < strlen(input); i++)
+    {
+        printf("%c\n", input[i]);
+    }
+    
+    return;
 }
