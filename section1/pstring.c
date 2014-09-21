@@ -8,4 +8,6 @@ int main(int argc, string argv[])
 
     // TODO
     // loop through the string
+
+    return 0;
 }
