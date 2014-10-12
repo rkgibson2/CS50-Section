@@ -1,0 +1,151 @@
+\documentclass[12pt]{exam}
+\usepackage[utf8]{inputenc}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{courier}
+
+\lstset{basicstyle=\footnotesize\ttfamily, frame=single, showstringspaces=false, numbers=left}
+
+\newcommand{\class}{Robbie Gibson-Practice Questions}
+\newcommand{\examnum}{Quiz 0}
+
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}
+\runningheadrule
+
+\begin{document}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name:} & \makebox[2in]{\hrulefill}\\
+\textbf{\examnum} &&\\
+\end{tabular*}\\
+\rule[2ex]{\textwidth}{2pt}
+
+\begin{questions}
+
+\question
+Angela loves Catalan numbers and their cool properties in combinatorics. Write a function to find the nth Catalan number. The Catalan numbers are expressed as:
+
+\begin{align*}
+\frac{(2n)!}{(n+1)!n!}
+\end{align*}
+
+\makeemptybox{4in}
+
+\newpage
+
+\question Below is a C program that sets a lot of variables.
+In the table, write the value of each variables after the given line has been executed.
+You should use \&x and the like when writing the value of the pointers.
+
+\begin{lstlisting}[language=c, mathescape]
+int main(int argc, char** argv)
+{
+    int x = 2, y = 3, z = 4;
+    int$^*$ a = &x;
+    int$^*$ b = &y;
+    int$^*$ c = &z;
+    
+    y += $^*$a;
+    z = y + $^*$b;
+    $^*$a = x + $^*$b;
+    c = b;
+    $^*$b = $^*$c;
+    y = z + $^*$c;
+    
+    return 0;
+}
+\end{lstlisting}
+
+\begin{tabular}{r|c|c|c|c|c|c}
+Line & x & y & z & a & b & c \\
+6    &   &   &   &   &   &   \\
+8    &   &   &   &   &   &   \\
+9    &   &   &   &   &   &   \\
+10   &   &   &   &   &   &   \\
+11   &   &   &   &   &   &   \\
+12   &   &   &   &   &   &   \\
+13   &   &   &   &   &   &   \\
+\end{tabular}
+
+\question
+True or False:
+\begin{enumerate}
+\item Malloc allocates memory on the stack.
+\item A string in C is an array.
+\item It's possible to sort an array in $O(n \log{n})$ time.
+\item Angela creates and declares an int array, but doesn't initialize it. It's filled with 0's.
+\item Typing {\tt next} in gdb will step into a function called on that line.
+\item The size of an int is 4 bytes.
+\item 4 bytes is 36 bits.
+\end{enumerate}
+
+\newpage
+
+\question
+Angela writes some code to determine if a number is prime. Unfortunately, it's buggy and that makes her sad.
+
+How can you fix this implementation?
+
+\begin{lstlisting}[language=c, mathescape]
+#include <stdio.h>
+#include <cs50.h>
+
+int main(int argc, char$^{**}$ argv) {
+  int n, flag;
+
+  printf("Enter value of N > ");
+  n = GetInt();
+  
+  flag = 0;
+  for (int i = 2; (i < (n / 2)) && flag; ) { 
+    if (n % i == 0) /* If true n is divisible by i */
+      flag = 0;
+  }
+ 
+  if (flag)
+    printf("%d is prime\n", n);
+  else
+    printf("%d has %d as a factor\n", n, i);
+  return 0;
+  
+}
+\end{lstlisting}
+
+\question
+How many different, unique values can you represent with 4 bits?
+
+\question 
+Angela's arguing with Robbie about how to best sort an array. Angela thinks MergeSort is faster, but Robbie keeps saying Bubblesort is faster. Who's correct, what are the best-case and worst-case runtimes, and why are the two runtimes different?
+
+\makeemptybox{2in}
+
+\newpage
+
+\question
+Angela says a pointer is a variable whose value is the direct address of a memory location. 
+\begin{enumerate}
+\item Is there anything wrong with this definition? What's wrong with it?
+\item Declare a pointer.
+\item Why are pointers useful?
+\end{enumerate}
+\makeemptybox{2in}
+
+
+\question
+Write your own string compare function.
+The real {\tt strcmp()} has complicated return values, but yours should {\tt return 1} if the strings are equal and {\tt return 0} otherwise.
+Use pointer arithmetic to check the string equality and not array indexing.
+
+{\tt int strcmp(char$^*$ str1, char$^*$ str2)
+
+\{ }
+
+\end{questions}
+
+\end{document}
