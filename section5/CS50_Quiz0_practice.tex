@@ -35,13 +35,16 @@ Angela loves Catalan numbers and their cool properties in combinatorics. Write a
 \frac{(2n)!}{(n+1)!n!}
 \end{align*}
 
+{\it Hint: Write a second function to find the factorial of a given number.
+Try making it recursive!}
+
 \makeemptybox{4in}
 
 \newpage
 
 \question Below is a C program that sets a lot of variables.
 In the table, write the value of each variables after the given line has been executed.
-You should use \&x and the like when writing the value of the pointers.
+You should use {\tt \&x} and the like when writing the value of the pointers.
 
 \begin{lstlisting}[language=c, mathescape]
 int main(int argc, char** argv)
@@ -62,6 +65,7 @@ int main(int argc, char** argv)
 }
 \end{lstlisting}
 
+{\tt
 \begin{tabular}{r|c|c|c|c|c|c}
 Line & x & y & z & a & b & c \\
 6    &   &   &   &   &   &   \\
@@ -72,6 +76,7 @@ Line & x & y & z & a & b & c \\
 12   &   &   &   &   &   &   \\
 13   &   &   &   &   &   &   \\
 \end{tabular}
+}
 
 \question
 True or False:
@@ -81,7 +86,7 @@ True or False:
 \item It's possible to sort an array in $O(n \log{n})$ time.
 \item Angela creates and declares an int array, but doesn't initialize it. It's filled with 0's.
 \item Typing {\tt next} in gdb will step into a function called on that line.
-\item The size of an int is 4 bytes.
+\item The size of an {\tt int} on the CS50 Appliance is 4 bytes.
 \item 4 bytes is 36 bits.
 \end{enumerate}
 
@@ -96,24 +101,31 @@ How can you fix this implementation?
 #include <stdio.h>
 #include <cs50.h>
 
-int main(int argc, char$^{**}$ argv) {
-  int n, flag;
-
-  printf("Enter value of N > ");
-  n = GetInt();
+int main(int argc, char** argv) 
+{
+    printf("Enter value of N : ");
+    int n = GetInt();
   
-  flag = 0;
-  for (int i = 2; (i < (n / 2)) && flag; ) { 
-    if (n % i == 0) /* If true n is divisible by i */
-      flag = 0;
-  }
+    int flag = 0;
+    int i;
+    for (i = 2; i <= (n / 2); ) 
+    { 
+        if (n % i == 0) /* If true n is divisible by i */
+        {
+            flag = 0;
+            break;
+        }
+    }
  
-  if (flag)
-    printf("%d is prime\n", n);
-  else
-    printf("%d has %d as a factor\n", n, i);
-  return 0;
-  
+    if (flag)
+    {
+        printf("%d is prime\n", n);
+    }
+    else
+    {    
+        printf("%d has %d as a factor\n", n, i);
+    }
+    return 0;
 }
 \end{lstlisting}
 
@@ -121,7 +133,7 @@ int main(int argc, char$^{**}$ argv) {
 How many different, unique values can you represent with 4 bits?
 
 \question 
-Angela's arguing with Robbie about how to best sort an array. Angela thinks MergeSort is faster, but Robbie keeps saying Bubblesort is faster. Who's correct, what are the best-case and worst-case runtimes, and why are the two runtimes different?
+Angela's arguing with Robbie about how to best sort a large {\tt int} array. Angela thinks Mergesort is faster, but Robbie keeps saying Bubblesort is faster. Who's correct, what are the best-case and worst-case runtimes, and why are the two runtimes different?
 
 \makeemptybox{2in}
 
@@ -140,7 +152,8 @@ Angela says a pointer is a variable whose value is the direct address of a memor
 \question
 Write your own string compare function.
 The real {\tt strcmp()} has complicated return values, but yours should {\tt return 1} if the strings are equal and {\tt return 0} otherwise.
-Use pointer arithmetic to check the string equality and not array indexing.
+{\bf Use pointer arithmetic to look at each {\tt char} in the string and NOT array indexing.}
+Also, assume that you can't use any other functions (like {\tt strlen()}).
 
 {\tt int strcmp(char$^*$ str1, char$^*$ str2)
 
