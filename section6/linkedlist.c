@@ -26,7 +26,7 @@ void insert_beginning(int n)
    head = new;
 }
 
-void print_list()
+void print_list(void)
 {
     node* ptr = head;
     
@@ -56,4 +56,6 @@ int main(void)
     insert_beginning(5);
     
     print_list();
+
+    clear_list();
 }
