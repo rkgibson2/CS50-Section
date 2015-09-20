@@ -30,10 +30,11 @@ void scope1(void)
 void scope2(void)
 {
     int a = 4;
-    (void) a; // have to do this to compile w/out warning "unused variable"
 
-    {
+    if (1) {
         int a = 0;
         printf("%d\n", a); // what will this print?
     }
+
+    printf("%d\n", a);
 }
