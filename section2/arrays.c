@@ -9,20 +9,20 @@ int main(void)
 
     for (int i = 0; i < 3; i++)
     {
-	    printf("array1[%d] = %d\n", i, array1[i]);
+	    printf("array1[%i] = %i\n", i, array1[i]);
     }
 
     printf("\n");
 
     for (int i = 0; i < 3; i++)
     {
-	printf("array2[%d] = %d\n", i, array2[i]);
+	    printf("array2[%i] = %i\n", i, array2[i]);
     }
 
     printf("\n");
 
     for (int i = 0; i < 3; i++)
     {
-	printf("array3[%d] = %d\n", i, array3[i]);
+	    printf("array3[%i] = %i\n", i, array3[i]);
     }
 }

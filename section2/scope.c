@@ -22,7 +22,7 @@ void scope1(void)
     if (1)
     {
         int a = 5;
-        printf("%d\n", a); // what will this print?
+        printf("%i\n", a); // what will this print?
     }
 }
 
@@ -33,8 +33,8 @@ void scope2(void)
 
     if (1) {
         int a = 0;
-        printf("%d\n", a); // what will this print?
+        printf("%i\n", a); // what will this print?
     }
 
-    printf("%d\n", a);
+    printf("%i\n", a);
 }
