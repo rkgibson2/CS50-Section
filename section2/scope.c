@@ -13,11 +13,13 @@ int main(void)
 // scope decided by parantheses
 void scope1(void)
 {
+    if (1)
     {
         int a = 4;
         (void) a; // have to do this to compile w/out warning "unused variable"
     }
 
+    if (1)
     {
         int a = 5;
         printf("%d\n", a); // what will this print?
