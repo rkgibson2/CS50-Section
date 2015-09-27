@@ -22,16 +22,16 @@ int main(int argc, string argv[])
 /**
  * Sorts array in place using bubble sort
  */
-void sort(int array[], int n)
+void sort(int array[], int length)
 {
     // cycle through array
-    for(int k = 0; k < n - 1; k++)
+    for(int k = 0; k < length - 1; k++)
     {
 
         // swap adjacent elements if out of order
         for( ; ; )
         {
-            
+
         }
 
     }

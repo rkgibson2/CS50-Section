@@ -22,7 +22,7 @@ int main(int argc, string argv[])
 /**
  * Sorts array in place using selection sort
  */
-void sort(int array[], int size)
+void sort(int array[], int length)
 {
-    
+
 }

@@ -32,17 +32,17 @@ int main(int argc, string argv[])
 /**
  * Returns true if value is in array of n values, else false.
  */
-bool search(int value, int values[], int n)
+bool search(int value, int values[], int length)
 {
     // Set values for the top and the bottom of the search
     int lower = 0;
-    int upper = n - 1;
+    int upper = length - 1;
 
     // Binary search
     while (lower <= upper)
     {
         int middle = (lower + upper) / 2;
-        
+
         if (values[middle] == value)
         {
             return 1;
@@ -56,6 +56,6 @@ bool search(int value, int values[], int n)
             lower = middle + 1;
         }
     }
-    
+
     return 0;
 }
