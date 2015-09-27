@@ -39,22 +39,9 @@ bool search(int value, int values[], int length)
     int upper = length - 1;
 
     // Binary search
-    while (lower <= upper)
+    while ( )
     {
-        int middle = (lower + upper) / 2;
 
-        if (values[middle] == value)
-        {
-            return 1;
-        }
-        else if (values[middle] > value)
-        {
-            upper = middle - 1;
-        }
-        else if (values[middle] < value)
-        {
-            lower = middle + 1;
-        }
     }
 
     return 0;
