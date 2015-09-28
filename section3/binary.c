@@ -30,9 +30,9 @@ int main(int argc, string argv[])
 
 
 /**
- * Returns true if value is in array of n values, else false.
+ * Returns true if `target` is in array of `length` values, else false.
  */
-bool search(int value, int values[], int length)
+bool search(int target, int values[], int length)
 {
     // Set values for the top and the bottom of the search
     int lower = 0;
